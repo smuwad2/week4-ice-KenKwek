@@ -22,9 +22,68 @@
                 // Invalid age: Age must be between 10 and 40.
                 // Invalid email: Email must contain the character @.
                 // Empty password: Password must be non-empty.
+                
+                // var errorMessages="";
+
+                /* SELF-ATTEMPT */
+                // var errorMessages=[];
+                
+                // let id = document.getElementsByName("id").value;
+                // let age = document.getElementsByName("age").vlaue;
+                // let email = document.getElementsByName("email").value;
+                // let password = document.getElementsByName("password").value;
+
+                // if (id.length > 10) {
+                //     console.log("ID has a maximum length of 10 characters.")
+                // }
+                // if (!email.incudes("@")) {
+                //     console.log("Invalid email: Email must contain the character @.")
+                // }
+                // if (age < 10 || age > 40) {
+                //     console.log("Invalid age: Age must be between 10 and 40.")
+                // }
+                // if (password != NaN) {
+                //     console.log("Empty password: Password must be non-empty.")
+                // }
+
+                /* IN CLASS WALKTHROUGH */
                 var errorMessages="";
+                const form = document.forms[formName];
+                const idVal = form["id"].value; // const idVal = document.getElementsByName("id")[0].value;
+                const ageVal = form["age"].value;
+                const emailVal = form["email"].value;
+                const passwordVal = form["password"].value;
+
+                if (idVal.length > 10) {
+                    errorMessages += "The id value shoudl be 10 characters or less.\n";
+                }
+
+                if (ageVal < 10 || ageVal > 40) {
+                    errorMessages += "Age must be between 10 and 40.\n";
+                }
+
+                if (emailVal.indexOf("@") == -1) {
+                    errorMessages += "Email must contain the character @.\n";
+                }
+
+                if (!passwordVal || passwordVal.length == 0) {
+                    errorMessages += "Password must be non-empty.\n";
+                }
+
+                alert(errorMessages);
+
+                if (errorMessages.length == 0)
+                    return true;
                 
-                
+                return false;
+
+                // if (errorMessages.length > 0) {
+                //     alert(errorMessages);
+                // } else {
+                // return true;
+                // }
+                // return false;
+
             }
      
          </script>
